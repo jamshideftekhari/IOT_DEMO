@@ -13,7 +13,7 @@ Usage:
 import requests
 
 # API Configuration
-API_URL = "http://192.168.1.100:8000"  # Change to your server's IP address
+API_URL = "http://192.168.1.100:8080"  # Change to your server's IP address
 DEVICE_ID = "raspberry-pi-01"
 
 def send_measurement(temperature, humidity):
