@@ -1,0 +1,23 @@
+# systemd service: start the bus simulation (04_bus.py) at boot
+#
+# Install on the Raspberry Pi:
+#   sudo cp 04_bus.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now 04_bus.service
+#
+# Change User and the paths below if your user or folder is different.
+
+[Unit]
+Description=City bus simulation on Sense HAT
+After=multi-user.target
+
+[Service]
+Type=simple
+User=jam
+WorkingDirectory=/home/jam/IOT_DEMO/rasp_py
+ExecStart=/usr/bin/python3 -u /home/pi/IOT_DEMO/rasp_py/04_bus.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
